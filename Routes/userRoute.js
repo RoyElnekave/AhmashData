@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const userLogic = require("../BL/userLogic");
 const { authJWT } = require("../middleware/auth");
-
+const { adminAuth } = require("../middleware/adminAuth")
 // function loger(req, res, next) {
 //   console.log("work 1")
 //   next()
@@ -31,15 +31,35 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const userToken = await userLogic.login(req.body)
-    res.send(userToken)
+    res.send({ userToken })
   } catch (e) {
     res.status(e.code).send(e.message)
   }
 })
 
-router.get("/:id?", authJWT, async (req, res) => {
+
+
+
+router.get("/my-details", authJWT, async (req, res) => {
 
   console.log(req._id)
+
+  try {
+    const result = await userLogic.get(req._id)
+    console.log("🚀 ~ file: userRoute.js ~ line 64 ~ router.get ~ result", result)
+    res.status(200).send(result)
+  } catch (error) {
+    if (error.code && error.code < 1000) {
+      res.status(error.code).send(error.message)
+    } else {
+      res.status(500).send("something went wrong")
+    }
+  }
+})
+
+
+router.get("/:id?", authJWT, adminAuth, async (req, res) => {
+
 
   try {
     const result = await userLogic.get(req.params.id)

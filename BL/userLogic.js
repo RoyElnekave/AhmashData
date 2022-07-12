@@ -29,10 +29,20 @@ async function register(data) {
   return token
 }
 
-async function get(id) {
-  const result = id ?
-    await userController.readOne({ _id: id }) :
-    await userController.read({})
+
+async function isAdmin(id) {
+  const user = await userController.read({ _id: id });
+  console.log("🚀 ~ file: userLogic.js ~ line 35 ~ isAdmin ~  user", user)
+  if (user[0].permission === "admin") {
+    return true
+  }
+  return false
+}
+
+
+
+async function get(id, proj) {
+  const result = id ? await userController.readOne({ _id: id }, proj) : await userController.read({})
 
   if (!result) throw ({ code: 404, message: "not found" })
 
@@ -51,4 +61,4 @@ async function del(id) {
 
 
 
-module.exports = { register, get, update, del, login }
+module.exports = { isAdmin, register, get, update, del, login }

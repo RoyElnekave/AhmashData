@@ -5,8 +5,8 @@ const
   app = express(),
   PORT = process.env.PORT || 3001
 
-app.use(require("cors")())
 app.use(express.json())
+app.use(require("cors")())
 
 const mainRouter = require("./Routes")
 app.use("/api", mainRouter)
