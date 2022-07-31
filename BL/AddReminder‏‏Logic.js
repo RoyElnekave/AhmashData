@@ -10,7 +10,14 @@ async function AddReminder(data) {
     contentReminder
   } = data;
 
-  if (!nameReminder || !everyDayReminder || !timeReminder || !lastName)
+  if (
+    !nameReminder ||
+    !everyDayReminder ||
+    !timeReminder ||
+    !dateReminder ||
+    !toReminder ||
+    !contentReminder
+  )
     throw { code: 400, message: "missing data" };
 
   const existReminder = await AddReminderController.readOne({ nameReminder });
