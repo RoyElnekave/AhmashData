@@ -1,0 +1,17 @@
+const express = require("express");
+const router = express.Router();
+const AddReminderLogic = require("../BL/AddReminder");
+
+router.post("/AddReminder", async (req, res) => {
+  try {
+    const reminder = await AddReminderLogic.AddReminder(req.body);
+    res.status(200).send({ reminder });
+  } catch (error) {
+    console.log("AddReminder", error);
+    if (error.code && error.code < 1000) {
+      res.status(error.code).send(error.message);
+    } else {
+      res.send("something went wrong");
+    }
+  }
+});
