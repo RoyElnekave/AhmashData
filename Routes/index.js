@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const AddReminderRoute = require("./AddReminderRoute");
+const AddReminderRouter = require("./AddReminderRoute");
 const BookkeepingInfoRouter = require("./BookkeepingInfoRoute");
 const NewCheckListRouter = require("./NewCheckListRoute");
 const NewOrderRouter = require("./NewOrderRoute");
@@ -21,4 +21,14 @@ router.use("/NewSupplier", NewSupplierRouter);
 router.use("/NewWorker", NewWorkerRouter);
 router.use("/ShiftAssignment", ShiftAssignmentRouter);
 
-module.exports = router;
+module.exports = {
+  AddReminderRouter,
+  BookkeepingInfoRouter,
+  NewCheckListRouter,
+  NewOrderRouter,
+  NewReceiptRouter,
+  NewShiftTableRouter,
+  NewSupplierRouter,
+  NewWorkerRouter,
+  ShiftAssignmentRouter
+};

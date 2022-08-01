@@ -15,3 +15,4 @@ router.post("/NewSupplier", async (req, res) => {
     }
   }
 });
+module.exports = router;

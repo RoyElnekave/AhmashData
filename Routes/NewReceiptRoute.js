@@ -15,3 +15,4 @@ router.post("/NewReceipt", async (req, res) => {
     }
   }
 });
+module.exports = router;

@@ -15,3 +15,5 @@ router.post("/NewCheckList", async (req, res) => {
     }
   }
 });
+
+module.exports = router;
