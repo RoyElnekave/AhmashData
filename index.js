@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(require("cors")());
 
 const mainRouter = require("./Routes");
-app.use("/api", mainRouter);
+app.use("/api", mainRouter.AddReminderRouter);
 
 app.listen(PORT, () => console.log(`server runing on port ${PORT}`));
 require("./DL/db").connect();

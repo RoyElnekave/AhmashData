@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const BookkeepingInfoLogic = require("../BL/BookkeepingInfo");
+const BookkeepingInfoLogic = require("../BL/BookkeepingInfoLogic");
 
 router.post("/BookkeepingInfo", async (req, res) => {
   try {

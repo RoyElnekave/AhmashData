@@ -1,4 +1,4 @@
-const { AddReminderModel } = require("../models/AddReminder");
+const { AddReminderModel } = require("../models/AddReminder‏‏");
 
 async function create(data) {
   return await AddReminderModel.create(data);
@@ -12,7 +12,7 @@ async function readOne(filter, proj) {
 }
 async function update(filter, newData) {
   return await AddReminderrModel.findOneAndUpdate(filter, newData, {
-    new: true
+    new: true,
   });
 }
 async function del(filter) {

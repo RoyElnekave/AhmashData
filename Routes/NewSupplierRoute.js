@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const NewSupplierLogic = require("../BL/NewSupplier");
+const NewSupplierLogic = require("../BL/NewSupplier‏‏Logic");
 
 router.post("/NewSupplier", async (req, res) => {
   try {

@@ -2,28 +2,28 @@ const mongoose = require("mongoose");
 const AddReminderSchema = new mongoose.Schema({
   nameReminder: {
     type: String,
-    required: true
+    required: true,
   },
   everyDayReminder: {
     type: String,
-    required: true
+    required: true,
   },
   timeReminder: {
     type: String,
-    required: true
+    required: true,
   },
   dateReminder: {
     type: Date,
-    required: true
+    required: true,
   },
   toReminder: {
     type: String,
-    required: true
+    required: true,
   },
   contentReminder: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const AddReminderModel = mongoose.model("AddReminder", AddReminderSchema);

@@ -1,11 +1,11 @@
-const BookkeepingInfoController = require("../DL/controllers/ BookkeepingInfoController");
+const BookkeepingInfoController = require("../DL/controllers/BookkeepingInfoController");
 
 async function BookkeepingInfo(data) {
   const {
     bookkeepingName,
     bookkeepingNameEmail,
     bookkeepingNamePhone,
-    DateOfSendingReceipts
+    DateOfSendingReceipts,
   } = data;
 
   if (
@@ -17,7 +17,7 @@ async function BookkeepingInfo(data) {
     throw { code: 400, message: "missing data" };
 
   const existBookkeepingInfo = await BookkeepingInfoController.readOne({
-    bookkeepingName
+    bookkeepingName,
   });
   if (existBookkeepingInfo) throw { code: 405, message: "duplicated name" };
 
