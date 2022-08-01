@@ -4,17 +4,17 @@ const BookkeepingInfoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    bookkeepingNameEmail,: {
+    bookkeepingNameEmail: {
         type: String
-        required: true,
+        required: true
     },
     bookkeepingNamePhone: {
         type: String,
-        required: true,
+        required: true
     },
     DateOfSendingReceipts: {
       type: Date,
-        required: true,
+        required: true
        
     }
 

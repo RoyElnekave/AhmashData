@@ -1,17 +1,17 @@
 const { BookkeepingInfoModel } = require("../models/BookkeepingInfo");
 
 async function create(data) {
-  return await AddReminderModel.create(data);
+  return await BookkeepingInfoModel.create(data);
 }
 async function read(filter, proj) {
-  return await AddReminderModel.find(filter, proj);
+  return await BookkeepingInfoModel.find(filter, proj);
 }
 
 async function readOne(filter, proj) {
-  return await AddReminderrModel.findOne(filter, proj);
+  return await BookkeepingInfoModel.findOne(filter, proj);
 }
 async function update(filter, newData) {
-  return await AddReminderrModel.findOneAndUpdate(filter, newData, {
+  return await BookkeepingInfoModel.findOneAndUpdate(filter, newData, {
     new: true
   });
 }

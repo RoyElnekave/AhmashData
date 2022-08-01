@@ -2,7 +2,7 @@ const AddReminderController = require("../DL/controllers/AddReminderController")
 
 async function AddReminder(data) {
   const {
-    nameReminder,
+    ReminderName,
     everyDayReminder,
     timeReminder,
     dateReminder,
@@ -20,10 +20,12 @@ async function AddReminder(data) {
   )
     throw { code: 400, message: "missing data" };
 
-  const existReminder = await AddReminderController.readOne({ nameReminder });
-  if (existReminder) throw { code: 405, message: "duplicated name" };
+  const existAddReminder = await AddReminderController.readOne({
+    nameReminder
+  });
+  if (existAddReminder) throw { code: 405, message: "duplicated name" };
 
-  const Reminder = await AddReminderController.create(data);
+  const AddReminder = await AddReminderController.create(data);
 }
 
 module.exports = { AddReminder };

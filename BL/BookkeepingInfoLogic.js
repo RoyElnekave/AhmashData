@@ -16,12 +16,12 @@ async function BookkeepingInfo(data) {
   )
     throw { code: 400, message: "missing data" };
 
-  const existReminder = await BookkeepingInfoController.readOne({
-    nameReminder
+  const existBookkeepingInfo = await BookkeepingInfoController.readOne({
+    bookkeepingName
   });
-  if (existReminder) throw { code: 405, message: "duplicated name" };
+  if (existBookkeepingInfo) throw { code: 405, message: "duplicated name" };
 
-  const Reminder = await BookkeepingInfoController.create(data);
+  const BookkeepingInfo = await BookkeepingInfoController.create(data);
 }
 
 module.exports = { BookkeepingInfo };
