@@ -13,7 +13,7 @@ const NewReceiptSchema = new mongoose.Schema({
     required: true,
   },
   ReceiptFromDate: {
-    type: Date,
+    type: String,
     required: true,
   },
   Receipt: {

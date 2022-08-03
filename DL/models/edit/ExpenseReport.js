@@ -4,8 +4,8 @@ const AddReminderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    everyDayReminder,: {
-        type: String
+    everyDayReminder: {
+        type: String,
         required: true,
     },
     timeReminder: {

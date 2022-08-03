@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const NewSupplierLogic = require("../BL/NewSupplier‏‏Logic");
 
-router.post("/NewSupplier", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const NewSupplier = await NewSupplierLogic.NewSupplier(req.body);
     res.status(200).send({ NewSupplier });

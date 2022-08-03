@@ -21,7 +21,7 @@ const NewWorkerSchema = new mongoose.Schema({
     required: true,
   },
   DateOfBirth: {
-    type: Date,
+    type: String,
     required: true,
   },
   responsibility: {

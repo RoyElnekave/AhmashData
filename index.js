@@ -1,4 +1,5 @@
 require("dotenv").config();
+const mainRouter = require("./Routes");
 const express = require("express"),
   app = express(),
   PORT = process.env.PORT || 3001;
@@ -6,8 +7,7 @@ const express = require("express"),
 app.use(express.json());
 app.use(require("cors")());
 
-const mainRouter = require("./Routes");
-app.use("/api", mainRouter.AddReminderRouter);
+app.use("/api", mainRouter);
 
 app.listen(PORT, () => console.log(`server runing on port ${PORT}`));
 require("./DL/db").connect();

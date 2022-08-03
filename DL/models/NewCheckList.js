@@ -13,7 +13,7 @@ const NewCheckListSchema = new mongoose.Schema({
     required: true,
   },
   fromDatechecklist: {
-    type: Date,
+    type: String,
     required: true,
   },
   tochecklist: {

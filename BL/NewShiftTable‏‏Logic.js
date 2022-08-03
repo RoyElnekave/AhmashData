@@ -18,7 +18,7 @@ async function NewShiftTable(data) {
     !ShiftStartTime ||
     !shiftClosingTime ||
     !workersPerShift ||
-    ActiveDay
+    !ActiveDay
   )
     throw { code: 400, message: "missing data" };
 

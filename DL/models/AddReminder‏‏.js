@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const AddReminderSchema = new mongoose.Schema({
-  nameReminder: {
+  ReminderName: {
     type: String,
     required: true,
   },
@@ -13,7 +13,7 @@ const AddReminderSchema = new mongoose.Schema({
     required: true,
   },
   dateReminder: {
-    type: Date,
+    type: String,
     required: true,
   },
   toReminder: {

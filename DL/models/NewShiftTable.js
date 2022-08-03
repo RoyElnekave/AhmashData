@@ -13,7 +13,7 @@ const NewShiftTableSchema = new mongoose.Schema({
     required: true,
   },
   dateSubmissionShifts: {
-    type: Date,
+    type: String,
     required: true,
   },
   ShiftClosingDate: {

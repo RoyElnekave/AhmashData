@@ -12,23 +12,13 @@ const NewWorkerRouter = require("./NewWorkerRoute");
 const ShiftAssignmentRouter = require("./ShiftAssignmentRoute");
 
 router.use("/AddReminder", AddReminderRouter);
-// router.use("/BookkeepingInfo", BookkeepingInfoRouter);
-// router.use("/NewCheckList", NewCheckListRouter);
-// router.use("/NewOrder", NewOrderRouter);
-// router.use("/NewReceipt", NewReceiptRouter);
-// router.use("/NewShiftTable", NewShiftTableRouter);
-// router.use("/NewSupplier", NewSupplierRouter);
-// router.use("/NewWorker", NewWorkerRouter);
-// router.use("/ShiftAssignment", ShiftAssignmentRouter);
+router.use("/BookkeepingInfo", BookkeepingInfoRouter);
+router.use("/NewCheckList", NewCheckListRouter);
+router.use("/NewOrder", NewOrderRouter);
+router.use("/NewReceipt", NewReceiptRouter);
+router.use("/NewShiftTable", NewShiftTableRouter);
+router.use("/NewSupplier", NewSupplierRouter);
+router.use("/NewWorker", NewWorkerRouter);
+router.use("/ShiftAssignment", ShiftAssignmentRouter);
 
-module.exports = {
-  AddReminderRouter,
-  BookkeepingInfoRouter,
-  NewCheckListRouter,
-  NewOrderRouter,
-  NewReceiptRouter,
-  NewShiftTableRouter,
-  NewSupplierRouter,
-  NewWorkerRouter,
-  ShiftAssignmentRouter,
-};
+module.exports =router;

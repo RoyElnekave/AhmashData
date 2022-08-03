@@ -11,7 +11,7 @@ async function AddReminder(data) {
   } = data;
 
   if (
-    !nameReminder ||
+    !ReminderName ||
     !everyDayReminder ||
     !timeReminder ||
     !dateReminder ||
@@ -21,7 +21,7 @@ async function AddReminder(data) {
     throw { code: 400, message: "missing data" };
 
   const existAddReminder = await AddReminderController.readOne({
-    nameReminder,
+    ReminderName
   });
   if (existAddReminder) throw { code: 405, message: "duplicated name" };
 

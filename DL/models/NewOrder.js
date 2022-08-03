@@ -13,7 +13,7 @@ const NewOrderSchema = new mongoose.Schema({
     required: true,
   },
   orderFromDate: {
-    type: Date,
+    type: String,
     required: true,
   },
   itemName: {

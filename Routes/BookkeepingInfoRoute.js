@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const BookkeepingInfoLogic = require("../BL/BookkeepingInfoLogic");
 
-router.post("/BookkeepingInfo", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const BookkeepingInfo = await BookkeepingInfoLogic.BookkeepingInfo(
       req.body

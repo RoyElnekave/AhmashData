@@ -8,10 +8,10 @@ async function read(filter, proj) {
 }
 
 async function readOne(filter, proj) {
-  return await AddReminderrModel.findOne(filter, proj);
+  return await AddReminderModel.findOne(filter, proj);
 }
 async function update(filter, newData) {
-  return await AddReminderrModel.findOneAndUpdate(filter, newData, {
+  return await AddReminderModel.findOneAndUpdate(filter, newData, {
     new: true,
   });
 }

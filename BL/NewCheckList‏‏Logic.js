@@ -12,18 +12,18 @@ async function NewCheckList(data) {
   } = data;
 
   if (
-    !namechecklist ||
+    !checklistName ||
     !everyDaychecklist ||
     !timechecklist ||
     !fromDatechecklist ||
     !tochecklist ||
     !task ||
-    picture
+    !picture
   )
     throw { code: 400, message: "missing data" };
 
   const existNewCheckList = await NewCheckListController.readOne({
-    namechecklist
+    checklistName
   });
   if (existNewCheckList) throw { code: 405, message: "duplicated name" };
 

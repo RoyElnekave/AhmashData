@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const NewWorkerLogic = require("../BL/NewWorker‏‏‏‏Logic");
 
-router.post("/NewWorker", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const NewWorker = await NewWorkerLogic.NewWorker(req.body);
     res.status(200).send({ NewWorker });

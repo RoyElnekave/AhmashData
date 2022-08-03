@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const NewShiftTableLogic = require("../BL/NewShiftTable‏‏Logic");
 
-router.post("/NewShiftTable", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const NewShiftTable = await NewShiftTableLogic.NewShiftTable(req.body);
     res.status(200).send({ NewShiftTable });

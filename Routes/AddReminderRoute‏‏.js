@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const AddReminderLogic = require("../BL/AddReminder‏‏Logic");
 
-router.post("/AddReminder", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const AddReminder = await AddReminderLogic.AddReminder(req.body);
     res.status(200).send({ AddReminder });

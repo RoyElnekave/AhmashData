@@ -19,8 +19,8 @@ async function NewWorker(data) {
     !cellphoneNumber ||
     !HourlyPayment ||
     !DateOfBirth ||
-    responsibility ||
-    File101
+    !responsibility ||
+    !File101
   )
     throw { code: 400, message: "missing data" };
 

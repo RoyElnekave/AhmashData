@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const NewCheckListLogic = require("../BL/NewCheckList‏‏Logic");
 
-router.post("/NewCheckList", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const NewCheckList = await NewCheckListLogic.NewCheckList(req.body);
     res.status(200).send({ NewCheckList });
